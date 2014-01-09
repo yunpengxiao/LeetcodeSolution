@@ -17,17 +17,18 @@ public:
         for (int i = 0; i < s.size() - 1; i++)
         {
         	thissub = 1;
-        	memset(letters, 0, sizeof(letters));
-        	letters[s[i] - 'a']++;
+        	memset(letters, -1, sizeof(letters));
+        	letters[s[i] - 'a'] = i;
         	for (int j = i + 1; j < s.size(); j++)
         	{
-        		if (letters[s[j] - 'a'] != 0) 
+        		if (letters[s[j] - 'a'] != -1) 
         		{
+        			i = letters[s[j] - 'a'];
         			break;
         		}
         		else 
         		{
-        			letters[s[j] - 'a']++;
+        			letters[s[j] - 'a'] = i;
         			thissub++;
         		}
         	}
