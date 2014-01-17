@@ -1,46 +1,49 @@
 #include <iostream>
+#include <vector>
+#include <set>
+#include <algorithm>
 using namespace std;
 
 class Solution 
 {
-private:
-	vector<vector<int> > threeSum(vector<int> &num, int target)
-	{
-		vector<vector<int> > r;
-		vector<int> triple(3);
-		sort(num.begin(), num.end());
-		int j, k;
-		for (int i = 0; i < num.size(); i++)
-		{
-			if (num[i] == num[i - 1] && i > 0) continue;
-			j = i + 1;
-			k = num.size() - 1;
-			while (j < k)
-			{
-				if (num[i] + num[j] + num[k] > target) k--;
-				else if (num[i] + num[j] + num[k] < target) j++;
-				else 
-				{
-					if (num[j] != triple[1] || num[k] != triple[2] || r.size() == 0)
-					{
-						triple[0] = num[i];
-						triple[1] = num[j];
-						triple[2] = num[k];
-						r.push_back(triple);
-					}
-					j++;
-					k--;
-				}
-			}
-		}
-		return r;
-	}
 public:
     vector<vector<int> > fourSum(vector<int> &num, int target) 
     {
-        
+    	vector<vector<int> > r;
+        if (num.size() < 4) return r;
+        vector<int> t(4);
+        set<vector<int> > temp;
+        int start, end;
+        sort(num.begin(), num.end());
+        int n = num.size();
+        for (int i = 0; i < n; i++)
+        {
+        	for (int j = i + 1; j < n; j++)
+        	{
+        		start = j + 1;
+        		end = n - 1;
+        		while (start < end)
+        		{
+        			if (num[i] + num[j] + num[start] + num[end] > target) end--;
+        			else if (num[i] + num[j] + num[start] + num[end] < target) start++;
+        			else 
+        			{
+        					t[0] = num[i];
+        					t[1] = num[j];
+        					t[2] = num[start];
+        					t[3] = num[end];
+        					temp.insert(t);
+        				start++;
+        				end--;
+        			}
+        		}
+        	}
+        }
+        r.assign(temp.begin(), temp.end());
+        return r;
     }
 };
+
 int main()
 {
 
