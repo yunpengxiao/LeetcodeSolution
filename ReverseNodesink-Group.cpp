@@ -37,7 +37,7 @@ public:
             i++;
             if (i % k == 0)
             {
-                pre = reverse(pre, head->next)
+                pre = reverse(pre, head->next);
                 head = pre->next;
             }
             else head = head->next;
