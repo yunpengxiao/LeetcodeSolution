@@ -5,7 +5,7 @@ class Solutions
 {
 	public String reverseWords(String s) 
 	{
-		String t = "";
+		StringBuilder t = new StringBuilder("");
 		int index = 0;
 		for (int i = 0; i < s.length(); i++)
 		{
@@ -16,18 +16,18 @@ class Solutions
 				if (s.charAt(i) == ' ' && s.charAt(i) == s.charAt(i - 1)) continue;
 				else
 				{
-					t += s.charAt(i);
+					t.append(s.charAt(i));
 				}
 			}
 		}
-		String[] parts = t.split(" ");
-		String result = "";
+		String[] parts = t.toString().split(" ");
+		StringBuilder result = new StringBuilder("");
 		for (int i = parts.length - 1; i >= 0; i--)
 		{
-			result += parts[i];
-			if (i != 0) result += " ";
+			result.append(parts[i]);
+			if (i != 0) result.append(" ");
 		}
-		return result;
+		return result.toString();
     }
 }
 
