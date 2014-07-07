@@ -1,5 +1,7 @@
 import java.lang.*;
 import java.io.*;
+import java.util.Stack;  
+
 
 class Solutions
 {
@@ -28,15 +30,59 @@ class Solutions
 			if (i != 0) result.append(" ");
 		}
 		return result.toString();
-    }
+        }
+
+        public int evalRPN(String[] tokens)
+        {
+            int sum;
+            int a;
+            int b;
+            Stack<Integer> s = new Stack<Integer>();
+            for (String i: tokens)
+            {
+                if (i != "+" && i != "-" && i != "*" && i != "/")
+                {
+                    s.push(Integer.parseInt(i));
+                }
+                else
+                {
+                    switch (i)
+                    {
+                        case "+":
+                            a = s.pop();
+                            b = s.pop();
+                            s.push(a + b);
+                            break;
+                        case "-":
+                            a = s.pop();
+                            b = s.pop();
+                            s.push(a - b);
+                            break;
+                        case "*":
+                            a = s.pop();
+                            b = s.pop();
+                            s.push(a * b);
+                            break;
+                        case "/":
+                            a = s.pop();
+                            b = s.pop();
+                            s.push(a / b);
+                            break;
+                    }
+                }
+            }
+            return s.pop();
+        }
 }
 
 public class JavaMain
 {
 	public static void main(String args[])
 	{
-		System.out.println("Yunpeng");
+		//System.out.println("Yunpeng");
 		Solutions s = new Solutions();
-		System.out.println(s.reverseWords("? nhgpoulnntytmvpqe.rb.d ?s'o?bekcnb?jku?'fc' !ji xsn!ppbuso ei,kwkbhaenntkdqbutwa'a.lizwbtxnejicm t,dab,as.!hftamhwps.!.wkcgqfioxb?qubollgsd.wbjlvhr "));
+		String[] x = {"3", "+", "2"};
+		System.out.println(s.reverseWords("Yunpeng is tiancai"));
+		System.out.println(s.evalRPN(x));
 	}
 }
