@@ -3,14 +3,14 @@ import java.io.*;
 
 class Solutions
 {
-	public String reverseWords(String s) 
+	public String reverseWords(String s)
 	{
 		StringBuilder t = new StringBuilder("");
 		int index = 0;
 		for (int i = 0; i < s.length(); i++)
 		{
 			if (i == 0 && s.charAt(i) == ' ') continue;
-			else 
+			else
 			{
 
 				if (s.charAt(i) == ' ' && s.charAt(i) == s.charAt(i - 1)) continue;
