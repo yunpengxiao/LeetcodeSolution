@@ -151,10 +151,10 @@ public class JavaMain
     {
         //System.out.println("Yunpeng");
         Solutions s = new Solutions();
-        //String[] x = {"0", "3", "/"};
+        String[] x = {"0", "3", "/"};
         Point[] p = {new Point(2, 3), new Point(3, 3), new Point(-5, 3)};
-        //System.out.println(s.reverseWords("Yunpeng is tiancai"));
-        //System.out.println(s.evalRPN(x));
+        System.out.println(s.reverseWords("Yunpeng is tiancai"));
+        System.out.println(s.evalRPN(x));
         System.out.println(s.maxPoints(p));
     }
 }
