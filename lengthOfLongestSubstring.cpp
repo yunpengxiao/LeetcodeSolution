@@ -1,46 +1,60 @@
 #include <iostream>
 #include <string>
-#include <cstring>
+#include <map>
 using namespace std;
 
 class Solution {
-private:
-	char letters[26];
-	int maxsub;
 public:
-    int lengthOfLongestSubstring(string s) 
+    int lengthOfLongestSubstring(string s)
     {
-    	if (s.size() == 0) return 0;
-    	if (s.size() == 1) return 1;
-        maxsub = 0;
-        int thissub;
-        for (int i = 0; i < s.size() - 1; i++)
+        if (s.size() == 0 || s.size() == 1)
         {
-        	thissub = 1;
-        	memset(letters, -1, sizeof(letters));
-        	letters[s[i] - 'a'] = i;
-        	for (int j = i + 1; j < s.size(); j++)
-        	{
-        		if (letters[s[j] - 'a'] != -1) 
-        		{
-        			i = letters[s[j] - 'a'];
-        			break;
-        		}
-        		else 
-        		{
-        			letters[s[j] - 'a'] = i;
-        			thissub++;
-        		}
-        	}
-        	if (thissub > maxsub) maxsub = thissub;
+            return s.size();
         }
-        return maxsub;
+        
+        int maxlen = 0;
+        //map<char, int> charMap;
+        int as[256];
+        for (int i = 0; i < s.size(); i++)
+        {
+        //    charMap.clear();
+        //    charMap.insert(make_pair(s[i], i));
+            
+            memset(as, -1, sizeof(as));
+            as[s[i]] = i;
+            
+            for (int j = i + 1; j < s.size(); j++)
+            {
+                //if (charMap.find(s[j]) != charMap.end())
+                if (as[s[j]] != -1)
+                {
+                    if (maxlen < j - i)
+                    {
+                        maxlen = j - i;
+                    }
+                    i = as[s[j]];
+                    //i = charMap[s[j]];
+                    break;
+                }
+                if (j == s.size() - 1)
+                {
+                    if (maxlen < j - i + 1)
+                        return j - i + 1;
+                    else
+                        break;
+                }
+                //charMap.insert(make_pair(s[j], j));
+                as[s[j]] = j;
+            }
+        }
+        return maxlen;
     }
+
 };
 
 int main()
 {
-	string t = "wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorellnmpapqfwkhopkmco";
+	string t = "qopubjguxhxdipfzwswybgfylqvjzhar";
 	Solution s;
 	cout << s.lengthOfLongestSubstring(t) << endl;
 	return 0;
