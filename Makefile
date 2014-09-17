@@ -1,2 +1,6 @@
 all:
-	g++ 
+	g++ MedianOfTwoSortedArrays.cpp -o MedianOfTwoSortedArrays.out
+clean:
+	rm  *.out
+
+
