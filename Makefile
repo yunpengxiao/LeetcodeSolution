@@ -1,5 +1,5 @@
 all:
-	g++ MedianOfTwoSortedArrays.cpp -o MedianOfTwoSortedArrays.out
+	g++ convertSortedArrayToBinarySearchTree.cpp -o p.out
 clean:
 	rm  *.out
 
