@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 #include "Utility.h"
 using namespace std;
 
@@ -8,35 +9,23 @@ public:
 	ListNode *insertSortList(ListNode *head)
 	{
 		if (head == NULL || head->next == NULL) return head;
-		ListNode *sortedList;
-		ListNode *unsortedList = head->next;
-		ListNode *pre;
-		ListNode *cur;
-		head->next = NULL;
-		cout << "entering loop!" << endl;
-		while (unsortedList != NULL)
-		{
-			sortedList = head;
-			while (sortedList != NULL && sortedList->val < unsortedList->val)
-			{
-				pre = sortedList;
-				sortedList = sortedList->next;
-			}
-			cout << "find position" << endl;
-
-			cur = unsortedList;
-			if (head == sortedList)
-			{
-				head = cur;
-			}
-			else
-			{
-				pre->next = unsortedList;
-			}
-			unsortedList = unsortedList->next;
-			cur->next = sortedList;
-		}
-		return head;
+                ListNode *g = new ListNode(INT_MIN);
+                ListNode *p = head;
+                ListNode *pre;
+                ListNode *t;
+                while (p)
+                {
+                    t = p->next;
+                    pre = g;
+                    while (pre->next != NULL && pre->next->val < p->val)
+                    {
+                        pre = pre->next;
+                    }
+                    p->next = pre->next;
+                    pre->next = p;
+                    p = t;
+                }
+		return g->next;
 	}
 };
 

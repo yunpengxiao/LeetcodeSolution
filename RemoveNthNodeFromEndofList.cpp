@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 
@@ -14,32 +13,27 @@ class Solution {
 public:
     ListNode *removeNthFromEnd(ListNode *head, int n) 
     {
-        vector<ListNode *> savepoint;
-        savepoint.push_back(head);
-        int count = 1;
-        ListNode *p = head;
-        while (p->next != NULL)
+        ListNode *slow = head;
+        ListNode *fast = head;
+        int count = 0;
+        while (count != n)
         {
-        	count++;
-        	savepoint.push_back(p->next);
-        	p = p->next;
+            fast = fast->next;
+            count++;
         }
-        int index = count - n;
-        if (index == 0)
+
+        if (fast == NULL)
         {
-        	head = head->next;
-        	return head;
+            head = head->next;
+            return head;
         }
-        else if (n == 1)
+        while (fast->next != NULL)
         {
-        	savepoint[count - 2]->next = NULL;
-        	return head;
+            slow = slow->next;
+            fast = fast->next;
         }
-        else
-        {
-        	savepoint[index - 1]->next = savepoint[index + 1];
-        	return head;
-        }
+        slow->next = slow->next->next;
+        return head;
     }
 };
 
