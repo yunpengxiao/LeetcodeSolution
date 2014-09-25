@@ -1,5 +1,5 @@
 all:
-	g++ InsertSortList.cpp -o p.out
+	g++ CountAndSay.cpp -o p.out
 clean:
 	rm  *.out
 

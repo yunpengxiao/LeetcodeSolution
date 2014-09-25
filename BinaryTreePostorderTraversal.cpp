@@ -8,14 +8,34 @@ class Solution
 public:
     vector<int> postorderTraversal(TreeNode *root)
     {
-        vector<int> r;
-        if (root == NULL) return r;
-        vector<int> tl = postorderTraversal(root->left);
-        vector<int> tr = postorderTraversal(root->right);
-        r.insert(r.end(), tl.begin(), tl.end());
-        r.insert(r.end(), tr.begin(), tr.end());
-        r.push_back(root->val);
-        return r;
+        vector<int> result;
+        vector<TreeNode*> nodeStack;
+        TreeNode* p = root;
+        TreeNode* pre = NULL;
+        int size;
+        while (p != NULL || !nodeStack.empty())
+        {
+            if (p != NULL)
+            {
+                nodeStack.push_back(p);
+                p = p->left;
+            }
+            else
+            {
+                size = nodeStack.size();
+                if (nodeStack[size - 1]->right != NULL && nodeStack[size - 1]->right != pre)
+                {
+                    p = nodeStack[size - 1]->right;
+                }
+                else
+                {
+                    pre = nodeStack[size - 1];
+                    nodeStack.pop_back();
+                    result.push_back(pre->val);
+                }
+            }
+        }
+        return result;
     }
 };
 

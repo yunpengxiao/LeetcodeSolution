@@ -8,14 +8,27 @@ class Solution
 public:
     vector<int> preorderTraversal(TreeNode *root)
     {
-        vector<int> r;
-        if (root == NULL) return r;
-        r.push_back(root->val);
-        vector<int> tl = preorderTraversal(root->left);
-        vector<int> tr = preorderTraversal(root->right);
-        r.insert(r.end(), tl.begin(), tl.end());
-        r.insert(r.end(), tr.begin(), tr.end());
-        return r;
+        vector<int> result;
+        vector<TreeNode*> nodeStack;
+        TreeNode *p = root;
+        int size;
+        while (p != NULL || nodeStack.size() != 0)
+        {
+            if (p != NULL)
+            {
+                result.push_back(p->val);
+                nodeStack.push_back(p);
+                p = p->left;
+            }
+            else
+            {
+                size = nodeStack.size();
+                p = nodeStack[size - 1];
+                nodeStack.pop_back();
+                p = p->right;
+            }
+        }
+        return result;
     }
 };
 
