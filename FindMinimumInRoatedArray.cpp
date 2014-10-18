@@ -15,8 +15,7 @@ public:
     	int m;
     	while (l < r)
     	{
-    		m = (l + s) / 2;
-    		cout << m << endl;
+    		m = (l + r) / 2;
     		if (num[m] < num[r])
     			r = m;
     		else
