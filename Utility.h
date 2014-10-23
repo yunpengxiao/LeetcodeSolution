@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 struct ListNode
@@ -30,6 +31,13 @@ struct TreeLinkNode
 	TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
 };
  
+struct RandomListNode 
+{
+	int label;
+	RandomListNode *next, *random;
+	RandomListNode(int x) : label(x), next(NULL), random(NULL) {}
+};
+
 struct Interval
 {
     int start;
