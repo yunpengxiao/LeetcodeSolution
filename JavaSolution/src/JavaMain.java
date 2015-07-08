@@ -1,4 +1,6 @@
-import java.io.*;
+/*
+* Main function for all the class
+*/
 
 public class JavaMain {
 	public static void main(String args[]) {
