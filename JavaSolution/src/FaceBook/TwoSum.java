@@ -1,7 +1,9 @@
+package FaceBook;
+
 import java.util.HashMap;
 
 /**
- * Created by xyunpeng on 12/30/15.
+ * Created by xyunpeng on 12/31/15.
  */
 public class TwoSum {
     // 记住返回值的index从1开始
