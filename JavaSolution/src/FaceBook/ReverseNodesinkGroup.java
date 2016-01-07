@@ -14,7 +14,7 @@ public class ReverseNodesinkGroup {
         ListNode pre = dummy;
         ListNode cur = head;
         int count = 0;
-        while (ptr != null) {
+        while (cur != null) {
             count++;
             ListNode next = cur.next;
             if (count == k) {
@@ -28,16 +28,18 @@ public class ReverseNodesinkGroup {
     }
 
     private ListNode reverseKElements(ListNode head, ListNode tail) {
-        ListNode pre = head;
-        ListNode cur = head.next;
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode pre = head.next;
+        ListNode cur = head.next.next;
         while (cur != tail) {
             ListNode next = cur.next;
-            cur.next = pre;
-            pre = cur;
+            cur.next = head.next;
+            head.next = cur;
             cur = next;
         }
-
-        head.next = tail;
-        return head;
+        pre.next = tail;
+        return pre;
     }
 }
