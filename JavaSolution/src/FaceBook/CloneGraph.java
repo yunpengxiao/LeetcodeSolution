@@ -21,31 +21,32 @@ import java.util.Queue;
 public class CloneGraph {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         if (node == null) {
-            return node;
+            return null;
         }
 
-        Map<UndirectedGraphNode, UndirectedGraphNode> newNodes = new HashMap<>();
-        Queue<UndirectedGraphNode> toCopy = new LinkedList<>();
-        toCopy.offer(node);
-        while (!toCopy.isEmpty()) {
-            UndirectedGraphNode t = toCopy.poll();
-            if (!newNodes.containsKey(t)) {
-                UndirectedGraphNode p = new UndirectedGraphNode(t.label);
-                newNodes.put(t, p);
-                for (UndirectedGraphNode ugn : t.neighbors) {
-                    toCopy.offer(ugn);
+        Queue<UndirectedGraphNode> queue = new LinkedList<>();
+        queue.offer(node);
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
+
+        while (!queue.isEmpty()) {
+            UndirectedGraphNode tmp = queue.poll();
+            if (!map.containsKey(tmp)) {
+                UndirectedGraphNode newNode = new UndirectedGraphNode(tmp.label);
+                map.put(tmp, newNode);
+                for (UndirectedGraphNode ugd : tmp.neighbors) {
+                    if (!map.containsKey(ugd)) {
+                        queue.offer(ugd);
+                    }
                 }
             }
         }
 
-        for (UndirectedGraphNode ugn : newNodes.keySet()) {
-            UndirectedGraphNode newNode = newNodes.get(ugn);
-            newNode.neighbors = new ArrayList<>();
-            for (UndirectedGraphNode n : ugn.neighbors) {
-                newNode.neighbors.add(newNodes.get(n));
+        for (UndirectedGraphNode ugd : map.KeySet()) {
+            for (UndirectedGraphNode ugdn : ugd.neighbors) {
+                map.get(ugd).neighbors.add(map.get(ugdn));
             }
         }
 
-        return newNodes.get(node);
+        return map.get(node);
     }
 }
