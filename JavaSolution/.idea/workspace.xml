@@ -76,15 +76,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BalancedBinaryTree.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BalancedBinaryTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BalancedBinaryTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38243628">
+            <state vertical-scroll-proportion="0.0">
               <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="28" selection-end-column="5" />
               <folding>
                 <element signature="e#122#123#0" expanded="true" />
                 <element signature="e#163#164#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LRUCache.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Google/LRUCache.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.88668555">
+              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/FaceBook/SearchinRotatedSortedArray.java" />
         <option value="$PROJECT_DIR$/src/SearchinRotatedSortedArrayII.java" />
         <option value="$PROJECT_DIR$/src/Microsoft/FindMinimuminRotatedSortedArray.java" />
         <option value="$PROJECT_DIR$/src/FindMinimuminRotatedSortedArrayII.java" />
@@ -177,6 +186,7 @@
         <option value="$PROJECT_DIR$/src/Microsoft/JumpGame.java" />
         <option value="$PROJECT_DIR$/src/Microsoft/RemoveDuplicatesfromSortedList.java" />
         <option value="$PROJECT_DIR$/src/BalancedBinaryTree.java" />
+        <option value="$PROJECT_DIR$/src/Google/LRUCache.java" />
       </list>
     </option>
   </component>
@@ -255,6 +265,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaSolution" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaSolution" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Google" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -732,12 +760,12 @@
       <workItem from="1455599981477" duration="1010000" />
       <workItem from="1455952610956" duration="1654000" />
       <workItem from="1456291877855" duration="2196000" />
-      <workItem from="1456462619118" duration="2248000" />
+      <workItem from="1456462619118" duration="2510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157427000" />
+    <option name="totallyTimeSpent" value="157689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="23" width="1862" height="1177" extended-state="0" />
@@ -794,13 +822,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/SearchinRotatedSortedArrayII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73153406">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FaceBook/SearchinRotatedSortedArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59517044">
@@ -1179,12 +1200,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BalancedBinaryTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38243628">
+        <state vertical-scroll-proportion="0.0">
           <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="28" selection-end-column="5" />
           <folding>
             <element signature="e#122#123#0" expanded="true" />
             <element signature="e#163#164#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Google/LRUCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88668555">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
