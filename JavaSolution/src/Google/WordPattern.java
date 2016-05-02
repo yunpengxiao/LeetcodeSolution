@@ -21,13 +21,8 @@ public class WordPattern {
                 return false;
             }
 
-            if (!hashmap.containsKey(pattern.charAt(i))) {
-                hashmap.put(pattern.charAt(i), words[i]);
-            }
-
-            if (!hashmap1.containsKey(words[i])) {
-                hashmap1.put(words[i], pattern.charAt(i));
-            }
+            hashmap.put(pattern.charAt(i), words[i]);
+            hashmap1.put(words[i], pattern.charAt(i));
         }
 
         return true;
