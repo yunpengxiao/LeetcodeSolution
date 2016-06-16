@@ -5,12 +5,14 @@ package FaceBook;
  */
 public class ExcelSheetColumnTitle {
     public String convertToTitle(int n) {
-        StringBuilder result = new StringBuilder();
-        while (n-- > 0) {
-            result.append((char)(n % 26 + 'A'));
-            n = n / 26;
+        StringBuilder result = new StringBuilder("");
+
+        while (n > 0) {
+            n--;
+            result.append((char)('A' + n % 26));
+            n /= 26;
         }
-        if (n == 0) return "A";
-        else return result.reverse().toString();
+
+        return result.reverse().toString();
     }
 }

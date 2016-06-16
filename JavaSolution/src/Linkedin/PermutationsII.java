@@ -21,7 +21,7 @@ public class PermutationsII {
         }
 
         for (int i = 0; i < nums.length; i++) {
-            if (added[]) continue;
+            if (added[i]) continue;
             if (i > 0 && !added[i - 1] && nums[i] == nums[i - 1]) continue;     //when a number has the same value with its previous, we can use this number only if his previous is used
             //ArrayList<Integer> t = new ArrayList(path);
             path.add(nums[i]);

@@ -25,3 +25,6 @@ public class RotateArray {
         }
     }
 }
+
+
+//这题还有一种方法比较巧妙: https://leetcode.com/discuss/27040/java-solution-in-one-pass-o-1-space-o-n-time

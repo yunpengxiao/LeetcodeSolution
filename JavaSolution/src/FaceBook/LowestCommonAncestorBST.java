@@ -13,4 +13,5 @@ public class LowestCommonAncestorBST {
     }
 }
 
-//尼玛太简单了
+//这个算法在最坏情况下是O(n)的复杂度,就是当这个树长得跟链表一样时
+

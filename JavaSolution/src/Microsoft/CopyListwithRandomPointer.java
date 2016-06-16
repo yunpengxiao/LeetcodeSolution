@@ -29,4 +29,39 @@ public class CopyListwithRandomPointer {
 
         return dummy.next;
     }
+
+    public RandomListNode copyRandomListNoExtraSpace(RandomListNode head) {    // 一定要会这种解法,ms问到过了
+        if (head == null) {
+            return null;
+        }
+
+        RandomListNode cur = head;
+        while (cur != null) {
+            RandomListNode t = new RandomListNode(cur.label);
+            t.next = cur.next;
+            cur.next = t;
+            cur = t.next;
+        }
+
+        cur = head;
+        while (cur != null) {
+            if (cur.random != null) {
+                cur.next.random = cur.random.next;
+            }
+            cur = cur.next.next;
+        }
+
+        cur = head;
+        RandomListNode p = cur.next;
+        RandomListNode newHead = cur.next;
+        while (p.next != null) {
+            cur.next = p.next;
+            p.next = p.next.next;
+            cur = cur.next;
+            p = p.next;
+        }
+
+        cur.next = null;
+        return newHead;
+    }
 }

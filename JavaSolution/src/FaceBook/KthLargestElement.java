@@ -21,7 +21,7 @@ public class KthLargestElement {
         if (left == k) return nums[left];
         else if (left < k) return helper(nums, left + 1, end, k);
         else
-            return helper(nums, start, left - 1, k);
+            return helper(nums, start, left - 1, k);                 //注意这里是排序后下标为k的元素,不用改变k的值
     }
 
     private void swap(int[] nums, int a, int b) {
