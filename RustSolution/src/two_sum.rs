@@ -21,8 +21,8 @@ impl Solution {
         let mut j = v.len() - 1;
         while i < j {
             if v[i] + v[j] == target {
-                result.push(i as i32);
-                result.push(j as i32);
+                result.push(v[i]);
+                result.push(v[j]);
                 return result;
             } else if v[i] + v[j] > target {
                 j -= 1;
