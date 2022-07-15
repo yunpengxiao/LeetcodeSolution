@@ -13,10 +13,9 @@ impl Solution {
             return result;
         }
 
-        let mut c;
-        loop {
-            c = strs[0].as_bytes()[i] as char;
-            for s in strs {
+        while i < strs[0].len() {
+            let c = strs[0].as_bytes()[i] as char;
+            for s in &strs {
                 if i == s.len() || s.as_bytes()[i] as char != c {
                     return result;
                 } 
@@ -24,5 +23,7 @@ impl Solution {
             result.push(c);
             i += 1;
         }
+
+        result
     }
 }
