@@ -6,7 +6,7 @@
 pub struct Solution {}
 
 impl Solution {
-    pub fn longest_common_prefix(strs: &Vec<String>) -> String {
+    pub fn longest_common_prefix(strs: Vec<String>) -> String {
         let mut result = String::from("");
         let mut i = 0;
         if strs.len() < 1 || strs[0].len() < 1 {
