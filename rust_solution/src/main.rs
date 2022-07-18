@@ -1,6 +1,7 @@
 mod two_sum;
 mod longest_common_prefix;
 mod valid_parentheses;
+mod str_str;
 
 fn main() {
     let nums = [1, 2, 3, 4, 5];
