@@ -2,6 +2,10 @@ mod two_sum;
 mod longest_common_prefix;
 mod valid_parentheses;
 mod str_str;
+mod plus_one;
+mod pascal_triangle;
+mod majority_element;
+mod contains_duplicate;
 
 fn main() {
     let nums = [1, 2, 3, 4, 5];
